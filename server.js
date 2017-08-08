@@ -5,6 +5,41 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var content ={
+    title:'Article One|Sanjeeta',
+    heading:'Article One',
+    date:'August 5, 2017',
+    content:`<p>
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+            </p>
+            <p>
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+            </p>
+            <p>
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+            </p>
+            <p>
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+            </p>`
+    
+};
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
