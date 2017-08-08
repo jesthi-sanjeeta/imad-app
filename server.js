@@ -4,39 +4,54 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-
-var articleOne ={
+var articles={
+    articleOne:{
     title:'Article One|Sanjeeta',
     heading:'Article One',
     date:'August 5, 2017',
     content:`<p>
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+            This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+            This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+            This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                
+            </p>
+            
+            <p>
+            This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+            This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                
             </p>
             <p>
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
-            </p>
-            <p>
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
-            </p>
-            <p>
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
-                This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+            This the content for my First Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+                
             </p>`
+    },
+    articleTwo:{
+    title:'ArticleTwo|Sanjeeta',
+    heading:'Article Two',
+    date:'August 6, 2017',
+    content:`<p>
+            This the content for my Second Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+            
+            </p>
+            
+            <p>
+            This the content for my Second Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+            
+            </p>`},
+    articleThree:{
+    title:'ArticleThree|Sanjeeta',
+    heading:'Article Three',
+    date:'August 7, 2017',
+    content:`<p>
+            This the content for my Third Aticle . Enjoying it . Good Learning. Want to make make the most out of it.
+            
+            </p>`
+    }
+    
+};
+var articleOne ={
+    
     
 };
 function createTemplate(data){
@@ -86,10 +101,10 @@ app.get('/article-one', function (req, res) {
     res.send(createTemplate(articleOne));
 });
 app.get('/article-two', function (req, res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+    res.send(createTemplate(articleTwo));
 });
 app.get('/article-three', function (req, res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+   res.send(createTemplate(articleThree));
 });
 
 app.get('/ui/style.css', function (req, res) {
