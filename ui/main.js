@@ -12,12 +12,23 @@
    // var interval = setInterval(moveRight,50);
 //};
 var button = document.getElementById('counter');
-var counter = 0;
+//var counter = 0;
 button.onclick = function() {
   //MAke a request to th ecounter endpoint 
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function() {
+   if(request.readystate == XMLHttpRequest.DONE) {
+       if(request.ststus == 200){
+           var counter = request.responseText;
+           var span = document.getElementById('count');
+           span.innerHTML = counter.toString();
+       }
+   } 
+    
+  };
   //Capture the response and store it a variable
   // Render the variable in th ecorrect span    
-  counter = counter + 1;
-  var span = document.getElementById('count');
-  span.innerHTML = counter.toString();
+  //counter = counter + 1;
+  //var span = document.getElementById('count');
+ // span.innerHTML = counter.toString();
 };
