@@ -177,7 +177,7 @@ app.get('/check-login',function(req,res){
 });
 app.get('/logout',function(req,res){
     delete req.session.auth;    
-    res.send('Logged Out')
+    res.send('Logged Out');
 });
 var pool = new Pool(config);
 app.get('/test_db',function(req,res){
