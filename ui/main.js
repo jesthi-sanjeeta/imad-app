@@ -48,5 +48,5 @@ console.log(password);
 //var name = nameInput.value;
 request.open('POST','http://jesthisanjeeta.imad.hasura-app.io/login',true);
 request.setRequestHeader('Content-Type', 'application/json');
- request.send(JSON.stringyfy({username: username,password: password}));
+ request.send(JSON.stringify({username: username,password: password}));
 };
